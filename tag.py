@@ -1,26 +1,19 @@
-students = {}
+num = int(input("Enter a number: "))
 
-for i in range(3):
-    name = input("Enter student name: ")
-    marks = int(input("Enter marks: "))
-    students[name] = marks
-
-print("\nStudent Records")
-print("----------------")
-
-total = 0
-
-for name, marks in students.items():
-    print(name, ":", marks)
-    total += marks
-
-average = total / len(students)
-
-print("----------------")
-print("Total Marks:", total)
-print("Average Marks:", average)
-
-if average >= 50:
-    print("Result: Pass")
+if num <= 1:
+    print("Not a Prime Number")
 else:
-    print("Result: Fail")
+    is_prime = True
+
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(num, "is a Prime Number")
+    else:
+        print(num, "is not a Prime Number")
+
+print("Program Completed")
+print("Thank You!")
